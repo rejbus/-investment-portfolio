@@ -3,6 +3,7 @@ package com.Rejbo.Dawid.investmentportfolio.controler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class UsersControler {
@@ -13,8 +14,15 @@ public class UsersControler {
         return "index";
     }
 
-    @PostMapping("/project")
-    public String showPrjkect() {
-        return "wallet";
+    @GetMapping("/contact.html")
+    public String showContact() {
+        return "contact";}
+
+        @RequestMapping("/registration.html")
+    public String showRegistration(){
+        return "registration";
+     }
+
     }
-}
+
+
