@@ -1,23 +1,27 @@
 package com.Rejbo.Dawid.investmentportfolio.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.*;
+import org.springframework.context.annotation.Bean;
 
+import javax.persistence.*;
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter
+@Getter
+@Data
 @Entity
 @Table(name = "users")
+
 public class Users {
 
+
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id;
-    private String login;
 
     public int getId() {
         return id;
     }
-
 
     public void setId(int id) {
         this.id = id;
@@ -70,6 +74,8 @@ public class Users {
     public void setTypeOfAccount(String typeOfAccount) {
         this.typeOfAccount = typeOfAccount;
     }
+
+    private String login;
 
     public String getPass() {
         return pass;

@@ -1,12 +1,20 @@
 package com.Rejbo.Dawid.investmentportfolio.controler;
 
+import com.Rejbo.Dawid.investmentportfolio.model.Users;
+import com.Rejbo.Dawid.investmentportfolio.repository.InvestemtRepository;
+import com.Rejbo.Dawid.investmentportfolio.repository.UsersRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class UsersControler {
+
+    @Autowired
+    private InvestemtRepository investemtRepository;
+    @Autowired
+    private UsersRepository usersRepository;
 
 
     @GetMapping("/")
@@ -16,13 +24,23 @@ public class UsersControler {
 
     @GetMapping("/contact.html")
     public String showContact() {
-        return "contact";}
+        return "contact";
+    }
 
-        @RequestMapping("/registration.html")
-    public String showRegistration(){
+    @GetMapping("/registration.html")
+    public String addUsersPage() {
         return "registration";
-     }
+
 
     }
+}
+
+
+
+
+
+
+
+
 
 

@@ -7,7 +7,7 @@ import org.hibernate.cfg.Configuration;
 public class HibernateSessionFactoryService implements IHibernateSessionFactoryService {
 
     private SessionFactory sessionFactory;
-    private HibernateSessionFactoryService(){
+    public HibernateSessionFactoryService(){
         this.sessionFactory = new Configuration().configure().buildSessionFactory();
     }
 
