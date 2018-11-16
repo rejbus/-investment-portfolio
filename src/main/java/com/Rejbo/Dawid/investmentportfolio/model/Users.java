@@ -16,7 +16,7 @@ public class Users {
 
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy = GenerationType.AUTO)
     private int id;
 
     public int getId() {
@@ -51,13 +51,7 @@ public class Users {
         this.surname = surname;
     }
 
-    public int getAge() {
-        return age;
-    }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     public String getEmail() {
         return email;
@@ -85,10 +79,22 @@ public class Users {
         this.pass = pass;
     }
 
+    @Override
+    public String toString() {
+        return "Users{" +
+                "id=" + id +
+                ", login='" + login + '\'' +
+                ", pass='" + pass + '\'' +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", email='" + email + '\'' +
+                ", typeOfAccount='" + typeOfAccount + '\'' +
+                '}';
+    }
+
     private String pass;
     private String name;
     private String surname;
-    private int age;
     private String email;
     private String typeOfAccount;
 

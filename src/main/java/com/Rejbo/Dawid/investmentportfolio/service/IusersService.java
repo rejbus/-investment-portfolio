@@ -17,10 +17,5 @@ public abstract class IusersService implements UserDetailsService {
     }
 
 
-    public Users loadUsersById (Integer id) throws UsernameNotFoundException {
-        Optional<Users> users = usersRepository.findById(id);
-        return new Users(users.getLogin);
 
-
-    }
 }
